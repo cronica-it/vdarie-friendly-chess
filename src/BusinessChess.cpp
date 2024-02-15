@@ -665,6 +665,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	switch (message) 
 	{
 		case WM_COMMAND:
+	    	fprintf(stderr, "WM_COMMAND\n");
 			wmId    = LOWORD(wParam); 
 			wmEvent = HIWORD(wParam); 
 			// Parse the menu selections:
@@ -686,6 +687,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			break;
         case WM_WINDOWPOSCHANGED:
 
+	    	fprintf(stderr, "WM_WINDOWPOSCHANGED\n");
 			for(i=0;i<120;i++)
 				{
 				lastDrawnBoard[i] = tabla0[i];
@@ -702,8 +704,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
               return(DefWindowProc(hWnd, message, wParam, lParam));
 
 		case 133:
+	    	fprintf(stderr, "WM_NCPAINT 133 !\n");
 
         case WM_SHOWWINDOW:
+	    	fprintf(stderr, "WM_SHOWWINDOW\n");
 		    for(i=0;i<120;i++)
 				{
 				lastDrawnBoard[i] = tabla0[i];
@@ -725,6 +729,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 
         case WM_LBUTTONDOWN:
+	    	fprintf(stderr, "WM_LBUTTONDOWN\n");
 
 
 			xc = LOWORD(lParam);
@@ -943,6 +948,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			 return(DefWindowProc(hWnd, message, wParam, lParam));
 
         case WM_CREATE:
+	    	fprintf(stderr, "WM_CREATE\n");
              hdc    = GetDC(hWnd);
 //             GetTextMetrics(hdc, &tm);
 //             cxChar = tm.tmAveCharWidth;
@@ -953,6 +959,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
              
 
 	    case WM_PAINT:
+	    	fprintf(stderr, "WM_PAINT\n");
 			hdc = BeginPaint(hWnd, &ps);
 			// TODO: Add any drawing code here...
 
@@ -978,9 +985,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			break;
 
 		case WM_DESTROY:
+	    	fprintf(stderr, "WM_DESTROY\n");
 			PostQuitMessage(0);
 			break;
 		default:
+			// fprintf(stderr, "message: %d\n", message);
 			return DefWindowProc(hWnd, message, wParam, lParam);
    }
    return 0;
