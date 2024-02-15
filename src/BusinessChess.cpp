@@ -619,7 +619,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
  
    hWnd = CreateWindowEx(0, "ME",
-                  "Friendly Chess - Program de Sah Prietenos Pentru Fiecare Vesr. 2023 3.1",
+                  "Friendly Chess - Program de Sah Prietenos Pentru Fiecare Vers. 2023 3.1",
                   WS_OVERLAPPEDWINDOW,
                   0, 0, /* left corner position */
                   cx , cy , /* width & height */

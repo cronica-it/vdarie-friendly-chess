@@ -1,7 +1,10 @@
 #include "stdafx.h"
+#include "Structures.h"
 
 void MoveToString(int, char []);
-extern struct Stack2[];
+extern struct StackElement2 Stack2[];
+extern int MoveNumber;
+
 void SaveGamePGN()
 {
 		int numberFrom;

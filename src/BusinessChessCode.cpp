@@ -1064,7 +1064,7 @@ strcpy (buffer, "Salvare partida.pgn");
 	strcpy(buffer,"[ECO \"E17\" ]\n");
 	fprintf(fpgn,buffer);
 	
-	if(fpgn > 0)
+	if(fpgn != NULL)
 	{
 // write header of game
 /*  

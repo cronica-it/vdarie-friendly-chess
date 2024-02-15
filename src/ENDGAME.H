@@ -100,7 +100,7 @@ struct Pieces {
 	};
 
 struct Pieces wPieces[50], bPieces[50];
-int nwPieces, nbPieces,;
+int nwPieces, nbPieces;
 
 
 int qmin, aa;

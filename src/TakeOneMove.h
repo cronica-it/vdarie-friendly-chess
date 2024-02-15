@@ -486,6 +486,8 @@ else
 	int r2;
 	int pi1 = 0;
 	int pi2 = 0;
+	int q1;
+	int q2;
 	
 	// trofism to advers king
 	switch (PieceMoved)
@@ -588,7 +590,7 @@ else
 		eval += (DistKing[SqFrom][(int)Stack[gameDepth].blackKingSquare] -
 			DistKing[SqTo][(int)Stack[gameDepth].blackKingSquare]) * 20 ;
 		// queen activity
-		int q1 = (int)Stack[gameDepth].pieceAPosition[WQ][0];
+		q1 = (int)Stack[gameDepth].pieceAPosition[WQ][0];
 		if(q1 == SqFrom) q1 = SqTo;
 		bonus = 0;
 		
@@ -605,7 +607,7 @@ else
 		eval += (DistKing[SqFrom][(int)Stack[gameDepth].whiteKingSquare] -
 			DistKing[SqTo][(int)Stack[gameDepth].whiteKingSquare]) * 20 ;	
 		// queen activity
-		int q2 = (int)Stack[gameDepth].pieceAPosition[BQ][0];
+		q2 = (int)Stack[gameDepth].pieceAPosition[BQ][0];
 		if(q2 == SqFrom) q2 = SqTo;
 		bonus = 0;
 		
